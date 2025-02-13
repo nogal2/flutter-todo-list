@@ -1,0 +1,9 @@
+name: gal
+repository: https://github.com/nogal2/flutter-todo-list
+publish_to: none
+
+environment:
+  sdk: ^3.6.1
+
+dev_dependencies:
+  melos: ^6.3.2

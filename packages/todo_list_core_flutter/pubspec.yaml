@@ -1,0 +1,16 @@
+name: todo_list_core_flutter
+description: 'Todo List Core Flutter Implementing Package'
+version: 0.0.1
+publish_to: none
+
+environment:
+  sdk: ^3.6.1
+
+dependencies:
+  flutter:
+    sdk: flutter
+  todo_list_core:
+    path: ../todo_list_core
+
+dev_dependencies:
+  build_runner: ^2.4.13
