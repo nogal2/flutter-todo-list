@@ -1,0 +1,38 @@
+name: Flutter Tests
+
+on:
+  workflow_dispatch:
+  push:
+    tags: ["*"]
+  pull_request:
+    branches: [main]
+    types: [assigned]
+    paths-ignore:
+      - "**/.gitignore"
+      - "**/*.md"
+
+jobs:
+  flutter_tests:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest]
+        flutter-channel: [stable]
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+      - name: Setup Flutter SDK
+        uses: subosito/flutter-action@v2
+        with:
+          channel: ${{ matrix.flutter-channel }}
+          cache: true
+      - name: Check up SDKs
+        run: |
+          dart --version
+          flutter --version
+      - name: Fetch Dependency Packages
+        run: flutter pub get
+      - name: Run Melos Bootstrap
+        run: flutter pub run melos bootstrap
+      - name: Run Flutter Tests
+        run: flutter pub run melos lint:all
