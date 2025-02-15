@@ -1,0 +1,2 @@
+/Users/nogal/Documents/flutter-todo-list/packages/todo_list/android/app/.cxx/Debug/272z45p4/x86/CMakeFiles/edit_cache.dir
+/Users/nogal/Documents/flutter-todo-list/packages/todo_list/android/app/.cxx/Debug/272z45p4/x86/CMakeFiles/rebuild_cache.dir
