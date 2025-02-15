@@ -3,13 +3,13 @@ name: Flutter Tests
 on:
   workflow_dispatch:
   push:
-    tags: ["*"]
+    tags: ['*']
   pull_request:
     branches: [main]
     types: [assigned]
     paths-ignore:
-      - "**/.gitignore"
-      - "**/*.md"
+      - '**/.gitignore'
+      - '**/*.md'
 
 jobs:
   flutter_tests:
@@ -34,5 +34,7 @@ jobs:
         run: flutter pub get
       - name: Run Melos Bootstrap
         run: flutter pub run melos bootstrap
+      - name: Dart Format
+        run: dart format .
       - name: Run Flutter Tests
         run: flutter pub run melos lint:all
