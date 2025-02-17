@@ -9,6 +9,8 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  hive: ^2.2.3
+  path_provider: ^2.1.5
   todo_list_core:
     path: ../todo_list_core
 
